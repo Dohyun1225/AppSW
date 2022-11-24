@@ -1,7 +1,8 @@
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
 import Teacher from '../assets/teacher.png'
 import Statistics from '../assets/statistics.png'
 import Student from '../assets/student.png'
+
 export default function HomeScreen(props) {
     const {params} = props.route
     const userNameText = params? params.userNameText:null;
@@ -11,8 +12,15 @@ export default function HomeScreen(props) {
             <Image style={styles.teacher} source={Teacher}/>
             <Text style={styles.helloTeacher}>Hello, {JSON.stringify(userNameText)}!</Text>
             <Text style={styles.secondText}>Check your class information</Text>
-            <Image style={styles.home1} source={Statistics}/>
-            <Image style={styles.home2} source={Student}/>
+
+            <TouchableOpacity 
+              onPress={()=> {props.navigation.navigate("Statistics")}}>
+              <Image style={styles.home1} source={Statistics}/>
+            </TouchableOpacity>
+            
+            <TouchableOpacity onPress={()=> {props.navigation.navigate("Information")}}>
+              <Image style={styles.home2} source={Student}/>
+            </TouchableOpacity>
         </View>
       </ScrollView>
     );
@@ -21,7 +29,7 @@ export default function HomeScreen(props) {
   const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor:'#F5F5F5',
         alignItems: 'center',
         justifyContent: 'center',
       },
