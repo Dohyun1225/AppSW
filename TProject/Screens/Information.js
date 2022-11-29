@@ -1,3 +1,4 @@
+import React from 'react'
 import {View, Text, StyleSheet, ScrollView, FlatList, TouchableOpacity} from 'react-native'
 
 const 
@@ -14,7 +15,7 @@ DATA = [
 ]
 
 
-export default function InformationScreen(props) {
+const InformationScreen = (props) => {
     const Item = ({name}) => (
         <TouchableOpacity 
         style={styles.item}
@@ -40,6 +41,7 @@ export default function InformationScreen(props) {
     )
 
 }
+export default InformationScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
