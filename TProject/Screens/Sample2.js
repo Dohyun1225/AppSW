@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, Button } from 'react-native';
 
 
-const Sample = () => {
+const Sample2 = () => {
     return(
         <View>
        
@@ -10,4 +10,4 @@ const Sample = () => {
     );
 };
 
-export default Sample;
+export default Sample2;
