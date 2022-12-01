@@ -1,7 +1,8 @@
-import { View, Text, Button, StyleSheet, Image, TextInput } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 import Logo from '../assets/logo.png'
 import User from '../assets/user.png'
 import Password from '../assets/password.png'
+import SignupButton from '../assets/signupButton.png'
 export default function SignUpScreen(props) {
     
     return (
@@ -42,11 +43,13 @@ export default function SignUpScreen(props) {
                 placeholder={'Class'}
                 maxLength={2}
             />
-            <Button 
-                title='Sign Up'
-                color="#6C4BC7"
-                onPress={()=> {props.navigation.navigate("Login")}}
-            />
+
+            <TouchableOpacity onPress={()=> {props.navigation.navigate("Login")}}>
+                <Image
+                    source={SignupButton}
+                    style={styles.button}
+                ></Image>
+            </TouchableOpacity>
         </View>
         
     );
@@ -95,5 +98,10 @@ export default function SignUpScreen(props) {
         height:23,
         bottom:-230,
         left:-120,
+    },
+    button :{
+        width: 230,
+        height: 60,
+        marginTop: 30
     }
 });

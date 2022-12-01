@@ -8,13 +8,14 @@ import StatisticsScreen from './Screens/Statistics';
 import InformationScreen from './Screens/Information'
 import QnAScreen from './Screens/QnA'
 import ProgressScreen from './Screens/Progress';
+import GoogleLoginScreen from './Screens/GoogleLogin'
 
 
 const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'>
+      <Stack.Navigator initialRouteName='GoogleLogin'>
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Home" component={HomeScreen}/>
         <Stack.Screen name="SignUp" component={SignUpScreen}/>
@@ -22,6 +23,7 @@ export default function App() {
         <Stack.Screen name="Information" component={InformationScreen}/>
         <Stack.Screen name="Progress" component={ProgressScreen}/>
         <Stack.Screen name="QnA" component={QnAScreen}/>
+        <Stack.Screen name="GoogleLogin" component={GoogleLoginScreen}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

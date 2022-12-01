@@ -1,45 +1,65 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import Slider from '@react-native-community/slider'
-import React, { useState } from 'react'
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native'
+import SliderBox from '../Component/SliderBox'
 
-const value = 3
 export default function ProgressScreen(props) {
+  const studentName = 'David'
+  const totalScore = 25
+  const averageScore = 30
+  const highestScore = 35
     return(
         <View style={styles.container}>           
             <View style={styles.blackBackground}>
-                <Text style={styles.name}>David</Text>
+                <Text style={styles.name}>{studentName}</Text>
                 <View style={styles.scorePosition}>
                     <View style={styles.scoreBox}>
-                        <Text style={styles.scoreText}>25</Text>
+                        <Text style={styles.scoreText}>{totalScore}</Text>
                         <Text style={styles.scoreTextTitle}>total score</Text>
                     </View>
                     <View style={styles.scoreBox}>
-                        <Text style={styles.scoreText}>25</Text>
+                        <Text style={styles.scoreText}>{averageScore}</Text>
                         <Text style={styles.scoreTextTitle}>average score</Text>
                     </View>
                     <View style={styles.scoreBox}>
-                        <Text style={styles.scoreText}>25</Text>
+                        <Text style={styles.scoreText}>{highestScore}</Text>
                         <Text style={styles.scoreTextTitle}>highest score</Text>
                     </View>
                 </View>
             </View>
-            <View>
-                <Text style={styles.subTitle}>In Progress</Text>
-                <TouchableOpacity 
+            <Text style={styles.subTitle}>In Progress</Text>
+            <ScrollView>
+              <TouchableOpacity 
                     style={styles.progressBox}
                     onPress={()=> {props.navigation.navigate("QnA")}}
-                >
-                    <Text style={styles.boxTitle}>Question 1</Text>
-                    <Slider 
-                    style={{width:300, alignSelf:'center'}}
-                    value={value}
-                    minimumValue={0}
-                    maximumValue={4}
-                    minimumTrackTintColor='#6C4BC7'
-                    ></Slider>
-                    <Text style={styles.sliderText}>{value}/{4}</Text>
-                </TouchableOpacity>
-            </View>
+              ><SliderBox questionNum={1} questionPro={4} max={4}/></TouchableOpacity>
+              <TouchableOpacity 
+                    style={styles.progressBox}
+                    onPress={()=> {props.navigation.navigate("QnA")}}
+              ><SliderBox questionNum={2} questionPro={4} max={5}/></TouchableOpacity>  
+              <TouchableOpacity 
+                    style={styles.progressBox}
+                    onPress={()=> {props.navigation.navigate("QnA")}}
+              ><SliderBox questionNum={3} questionPro={4} max={7}/></TouchableOpacity> 
+              <TouchableOpacity 
+                    style={styles.progressBox}
+                    onPress={()=> {props.navigation.navigate("QnA")}}
+              ><SliderBox questionNum={4} questionPro={4} max={13}/></TouchableOpacity>
+              <TouchableOpacity 
+                    style={styles.progressBox}
+                    onPress={()=> {props.navigation.navigate("QnA")}}
+              ><SliderBox questionNum={5} questionPro={0} max={6}/></TouchableOpacity>  
+              <TouchableOpacity 
+                    style={styles.progressBox}
+                    onPress={()=> {props.navigation.navigate("QnA")}}
+              ><SliderBox questionNum={6} questionPro={0} max={8}/></TouchableOpacity>
+              <TouchableOpacity 
+                    style={styles.progressBox}
+                    onPress={()=> {props.navigation.navigate("QnA")}}
+              ><SliderBox questionNum={7} questionPro={0} max={8}/></TouchableOpacity>
+              <TouchableOpacity 
+                    style={styles.progressBox}
+                    onPress={()=> {props.navigation.navigate("QnA")}}
+              ><SliderBox questionNum={8} questionPro={0} max={10}/></TouchableOpacity>   
+            </ScrollView>
         </View>
     )
 }
@@ -94,20 +114,11 @@ const styles = StyleSheet.create({
       progressBox: {
         borderRadius: 7,
         borderWidth:1.2,
-        borderColor:'#707070',
+        borderColor:'#999999',
         width:350,
         height:100,
-        alignSelf:'center'
-      },
-      boxTitle:{
-        fontSize:15,
-        fontWeight:'700',
-        margin:15,
-      },
-      sliderText: {
         alignSelf:'center',
-        top:-50,
-        left:130,
-        fontWeight:'700'
-      }
+        marginBottom: 20,
+        backgroundColor: '#ffffff'
+      },
     })

@@ -1,8 +1,9 @@
-import { View, Text, Button, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 import { useState} from 'react'
 import Logo from '../assets/logo.png'
 import User from '../assets/user.png'
 import Password from '../assets/password.png'
+import LoginButton from '../assets/loginButton.png'
 export default function LoginScreen(props) {
     const [userName,setUserName] = useState("")
     const onChangeInput = (event) =>{
@@ -39,11 +40,12 @@ export default function LoginScreen(props) {
                 maxLength={15}
             />
             
-            <Button 
-                title='LOGIN'
-                color="#6C4BC7"
-                onPress={()=>{props.navigation.navigate("Home",{userNameText:userName})}}
-            />
+            <TouchableOpacity onPress={()=>{props.navigation.navigate("Home",{userNameText:userName})}}>
+            <Image 
+                source={LoginButton}
+                style={styles.button}>
+            </Image>
+            </TouchableOpacity>
 
             <TouchableOpacity onPress={()=> {props.navigation.navigate("SignUp")}}>
                 <Text style={styles.signUp}>Sign Up</Text>
@@ -95,5 +97,10 @@ export default function LoginScreen(props) {
         height:21,
         bottom:-320,
         left:-120,
+    },
+    button :{
+        width: 230,
+        height: 60,
+        marginTop: 30
     }
 });
