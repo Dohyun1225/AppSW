@@ -3,6 +3,7 @@ import { useState} from 'react'
 import Logo from '../assets/logo.png'
 import User from '../assets/user.png'
 import Password from '../assets/password.png'
+import React from 'react';
 export default function LoginScreen(props) {
     const [userName,setUserName] = useState("")
     const onChangeInput = (event) =>{

@@ -2,6 +2,7 @@ import { View, Text, Button, StyleSheet, Image, TextInput } from 'react-native';
 import Logo from '../assets/logo.png'
 import User from '../assets/user.png'
 import Password from '../assets/password.png'
+import React from 'react';
 export default function SignUpScreen(props) {
     
     return (

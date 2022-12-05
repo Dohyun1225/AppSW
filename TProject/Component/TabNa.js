@@ -9,16 +9,17 @@ import ProgressScreen from "../Screens/Progress";
 import QnAScreen from "../Screens/QnA";
 import LoginScreen from "../Screens/Login";
 import StatisticsScreen from "../Screens/Statistics";
+import Sample1 from "../Screens/Sample2";
 
 const Tab = createBottomTabNavigator();
 function TabNa(){
     return(
-        <Tab.Navigator initialRouteName="Login">
-            <Tab.Screen name="Login" component={HomeScreen}
+        <Tab.Navigator initialRouteName="Home">
+            <Tab.Screen name="Home" component={HomeScreen}
             options={{headerShown: false}}/> 
       <Tab.Screen name="InformationScreen" component={InformationScreen} />
       <Tab.Screen name="ProgressScreen" component={ProgressScreen} />
-      <Tab.Screen name="QnAScreen" component={QnAScreen} />
+      <Tab.Screen name="QnAScreen" component={Sample1} />
      
         </Tab.Navigator>
     );

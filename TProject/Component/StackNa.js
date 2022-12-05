@@ -8,14 +8,13 @@ import StatisticsScreen from "../Screens/Statistics";
 import ProgressScreen from "../Screens/Progress";
 import QnAScreen from "../Screens/QnA";
 import InformationScreen from "../Screens/Information";
-import StatisticsScreen from "../Screens/Statistics";
 
 
 const Stack = createStackNavigator();
 
 const StackTab = () => {
     return(
-      <NavigationContainer>
+      
        <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen}
         options={{headerShown: false}}/>
@@ -26,7 +25,7 @@ const StackTab = () => {
         <Stack.Screen name="Progress" component={ProgressScreen}/>
         <Stack.Screen name="QnA" component={QnAScreen}/>
       </Stack.Navigator>
-      </NavigationContainer>
+     
 
     );
 }
