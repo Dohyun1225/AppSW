@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import DrawerNa from './Component/DrawerNa';
+import TabNa from './Component/TabNa';
 import { StackTab } from './Component/StackNa';
 
 /*function Root() {
@@ -25,7 +26,7 @@ import { StackTab } from './Component/StackNa';
 export default function App() {
   return (
     <NavigationContainer>
-      <StackTab></StackTab>
+      <TabNa/>
     </NavigationContainer>
   );
 }
