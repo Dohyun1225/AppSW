@@ -8,6 +8,7 @@ import InformationScreen from "../Screens/Information";
 import ProgressScreen from "../Screens/Progress";
 import QnAScreen from "../Screens/QnA";
 import LoginScreen from "../Screens/Login";
+import StatisticsScreen from "../Screens/Statistics";
 
 const Tab = createBottomTabNavigator();
 function TabNa(){

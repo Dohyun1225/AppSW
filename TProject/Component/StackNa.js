@@ -8,6 +8,7 @@ import StatisticsScreen from "../Screens/Statistics";
 import ProgressScreen from "../Screens/Progress";
 import QnAScreen from "../Screens/QnA";
 import InformationScreen from "../Screens/Information";
+import StatisticsScreen from "../Screens/Statistics";
 
 
 const Stack = createStackNavigator();
