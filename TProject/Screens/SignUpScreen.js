@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
   TextInput,
+  Button,
 } from "react-native";
 import { AuthContext } from "../App";
 
@@ -77,6 +78,7 @@ const SignUpScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
+      
     </SafeAreaView>
   );
 };

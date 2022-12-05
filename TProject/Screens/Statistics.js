@@ -69,7 +69,6 @@ const StatisticsScreen = (props) => {
         />
 
         
-
         
       </View>
   );

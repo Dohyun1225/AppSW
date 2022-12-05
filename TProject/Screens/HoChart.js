@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Dimensions } from 'react-native';
+import { Text, View, Dimensions, Button } from 'react-native';
 import {
   LineChart,
   BarChart,
@@ -60,8 +60,8 @@ function Home() {
 
         
 
-        
       </View>
+
     );
   }
 
