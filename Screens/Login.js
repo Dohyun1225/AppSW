@@ -25,12 +25,6 @@ export default function LoginScreen(props) {
         try{
             const data = await getDocs(collection(db, "user"))
             setUsers(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
-            {users?.map((row) =>{
-                if(addId == row.addId && addPassword == row.addPassword){
-                    {props.navigation.navigate("Home")}
-                    console.log("로그인 성공")
-                }
-            })}
         }catch(error){
             console.log(error.message)
         }
@@ -73,13 +67,19 @@ export default function LoginScreen(props) {
             <Button 
                 title='LOGIN'
                 color="#6C4BC7"
-                onPress={readfromDB}
+                onPress={()=>{
+                    {readfromDB}
+                    if(userName == addId){
+                    }else{
+                        alert('false')
+                    }
+                }}
             />
  
             <TouchableOpacity onPress={()=> {props.navigation.navigate("SignUp")}}>
                 <Text style={styles.signUp}>Sign Up</Text>
             </TouchableOpacity>
-         <Button title="Read Text" onPress={readfromDB}/>
+            <Button title="Read Text" onPress={readfromDB}/>
             {users?.map((row, idx) =>{
             return(
                 <>
