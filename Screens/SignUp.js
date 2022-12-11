@@ -14,7 +14,7 @@ export default function SignUpScreen(props) {
         const [addPassword, setAddPassword] = useState("");
         const [addClass, setAddClass] = useState();
         const [users, setUsers] = useState();
-        const [id, setID] = useState('');
+        const [id, setID] = useState();
     
         const addtoDB = async()=>{
             await addDoc(collection(db,"user"), {
@@ -28,6 +28,36 @@ export default function SignUpScreen(props) {
             setAddPassword("")
             setAddClass("")
         }
+        const readfromDB = async () =>{
+            try{
+                const data = await getDocs(collection(db, "user"))
+                setUsers(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+                {users?.map((row) =>{
+                    if(userName == row.addId && userPassword == row.addPassword){
+                        {props.navigation.navigate("Home",{userNameText:userName})}
+                    }
+                })}
+            }catch(error){
+                console.log(error.message)
+            }
+        }
+
+        const updateDB = async () =>{
+            try{ 
+              const docRef = doc(df, "user", addId);
+              await updateDoc(docRef, {
+                addId:addId,
+                addPassword:addPassword,
+                addClass:addClass,
+                createdAt: new Date()
+              })
+              alert("updated!")
+              readfromDB()
+            }catch(error){
+              console.log(error.message)
+            }
+          }
+        
 
         
     
@@ -83,6 +113,10 @@ export default function SignUpScreen(props) {
             <Button
                 title='tset'
                 onPress={addtoDB}
+            />
+                <Button
+                title='tset'
+                onPress={updateDB}
             />
         </View>
         

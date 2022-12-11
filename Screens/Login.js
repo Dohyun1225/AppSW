@@ -28,6 +28,7 @@ export default function LoginScreen(props) {
             {users?.map((row) =>{
                 if(userName == row.addId && userPassword == row.addPassword){
                     {props.navigation.navigate("Home",{userNameText:userName})}
+                    
                 }
             })}
         }catch(error){
